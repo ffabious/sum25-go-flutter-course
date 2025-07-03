@@ -2,8 +2,6 @@ package user
 
 import (
 	"errors"
-	"regexp"
-	"strconv"
 )
 
 // Predefined errors
@@ -39,47 +37,31 @@ func (u *User) Validate() error {
 
 // String returns a string representation of the user, formatted as "Name: <name>, Age: <age>, Email: <email>"
 func (u *User) String() string {
-	return "Name: " + u.Name + ", Age: " + strconv.Itoa(u.Age) + ", Email: " + u.Email
+	// TODO: Implement this function
+	return ""
 }
 
 // NewUser creates a new user with validation, returns an error if the user is not valid
 func NewUser(name string, age int, email string) (*User, error) {
-	user := &User{
-		Name:  name,
-		Age:   age,
-		Email: email,
-	}
-
-	if err := user.Validate(); err != nil {
-		return nil, err
-	}
-
-	return user, nil
+	// TODO: Implement this function
+	return nil, nil
 }
 
 // IsValidEmail checks if the email format is valid
 // You can use regexp.MustCompile to compile the email regex
 func IsValidEmail(email string) bool {
-	// Regular expression for validating an email
-	const emailRegex = `^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$`
-	return regexp.MustCompile(emailRegex).MatchString(email)
+	// TODO: Implement this function
+	return false
 }
 
 // IsValidName checks if the name is valid, returns false if the name is empty or longer than 30 characters
 func IsValidName(name string) bool {
-	if len(name) == 0 || len(name) > 30 {
-		return false
-	}
-	// Check if the name contains only letters and spaces
-	for _, char := range name {
-		if !((char >= 'A' && char <= 'Z') || (char >= 'a' && char <= 'z') || char == ' ') {
-			return false
-		}
-	}
-	return true
+	// TODO: Implement this function
+	return false
 }
 
 // IsValidAge checks if the age is valid, returns false if the age is not between 0 and 150
 func IsValidAge(age int) bool {
-	return age >= 0 && age <= 150
+	// TODO: Implement this function
+	return false
 }
